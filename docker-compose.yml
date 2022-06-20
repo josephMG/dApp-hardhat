@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  ####### Blockchain hardhat ##############
+  hardhat:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    # restart: always
+    #   command: yarn run dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+      # - ./<PATH_TO_FRONTEND_DIR>/contracts:/app/tmp/contracts
+    ports:
+      - 8545:8545
