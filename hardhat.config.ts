@@ -1,8 +1,8 @@
-// import fs from 'fs'
 import 'dotenv/config'
-import { HardhatUserConfig } from "hardhat/config";
-import "@nomiclabs/hardhat-ethers";
+import { HardhatUserConfig } from "hardhat/config"
+import "@nomiclabs/hardhat-ethers"
 import 'hardhat-deploy'
+import 'hardhat-abi-exporter'
 import tasks from './tasks'
 
 // Load tasks
@@ -49,6 +49,14 @@ const config: HardhatUserConfig = {
       gasPrice: 1000000000,
       accounts: { mnemonic }
     }
+  },
+  abiExporter: {
+    path: './data/abi',
+    runOnCompile: true,
+    clear: true,
+    flat: true,
+    spacing: 2,
+    format: 'json'
   }
 }
 
