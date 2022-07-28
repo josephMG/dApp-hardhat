@@ -5,8 +5,10 @@ module.exports = {
     node: true,
     es6: true
   },
+  parser: 'babel-eslint',
   parserOptions: {
-    parser: 'babel-eslint'
+    sourceType: 'module',
+    allowImportExportEverywhere: true
   },
   extends: [],
   plugins: [],
@@ -17,6 +19,5 @@ module.exports = {
     curly: 'off',
     'no-console': 'off',
     'arrow-parens': ['error', 'as-needed'],
-    'import/namespace': ['error', { allowComputed: true }]
   }
 }

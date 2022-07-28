@@ -12,11 +12,14 @@ contract Greeter {
   }
 
   function greet() public view returns (string memory) {
+    console.log("greet function called ");
+    console.log("------ %s", greeting);
     return greeting;
   }
 
   function setGreeting(string memory _greeting) public {
     console.log("Changing greeting from '%s' to '%s'", greeting, _greeting);
+    console.log("sender: ", msg.sender);
     greeting = _greeting;
   }
 }
